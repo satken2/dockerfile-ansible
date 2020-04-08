@@ -7,7 +7,7 @@ This Docker image is based on the `python:3.7.6-stretch` base image.
 To run ansible container:
 
 ```
-docker run --rm satken2/docker-ansible ansible
+docker run --rm satken2/ansible ansible
 ```
 
 
@@ -34,7 +34,7 @@ Run docker container.<br>
 Following command is equivalent to `ansible-playbook  <YAML_FILENAME>`.
 
 ```
-docker run -v "${PWD}":/work:ro -v ~/.ansible/roles:/root/.ansible/roles -v ~/.ssh:/root/.ssh:ro --rm satken2/docker-ansible ansible-playbook <YAML_FILENAME>
+docker run -v "${PWD}":/work:ro -v ~/.ansible/roles:/root/.ansible/roles -v ~/.ssh:/root/.ssh:ro --rm satken2/ansible ansible-playbook <YAML_FILENAME>
 ```
 
 To run playbook properly, you need to bind following directories.
@@ -53,7 +53,7 @@ To run playbook properly, you need to bind following directories.
 
 Following command is equivalent to `ansible-galaxy install <ROLE_NAME>`<br>
 ```
-docker run -v ~/.ansible/roles:/root/.ansible/roles --rm satken2/docker-ansible ansible-galaxy install <ROLE_NAME>
+docker run -v ~/.ansible/roles:/root/.ansible/roles --rm satken2/ansible ansible-galaxy install <ROLE_NAME>
 ```
 
 Role will be installed into `~/.ansible/roles` of your host filesystem.
