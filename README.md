@@ -1,6 +1,6 @@
 # dockerfile-ansible
 
-This Docker image is based on the `python:3.7.6-stretch` base image.
+This Docker image is based on the `python:3.10-rc-alpine` base image.
 
 ## Quick start
 
@@ -45,10 +45,6 @@ To run playbook properly, you need to bind following directories.
 | `~/.ansible/roles`| `/root/.ansible/roles` | For persisting installed roles |
 |  `~/.ssh`      |    `/root/.ssh`    | For SSH authentication |
 
-
-
-
-
 ### Installing roles from Ansible Galaxy
 
 Following command is equivalent to `ansible-galaxy install <ROLE_NAME>`<br>
@@ -58,6 +54,13 @@ docker run -v ~/.ansible/roles:/root/.ansible/roles --rm satken2/ansible ansible
 
 Role will be installed into `~/.ansible/roles` of your host filesystem.
 
+
+### Ansible Lint
+
+This container also has ansible-lint command<br>
+```
+docker run --rm satken2/ansible ansible-lint -p <YAML_FILENAME>
+```
 
 ## Creating aliases
 
