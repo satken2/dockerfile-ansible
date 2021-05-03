@@ -1,6 +1,6 @@
 # dockerfile-ansible
 
-This Docker image is based on the `python:3.10-rc-alpine` base image.
+This Docker image is based on the `python:3.9.4-slim` base image.
 
 ## Quick start
 
@@ -60,7 +60,7 @@ Role will be installed into `~/.ansible/roles` of your host filesystem.
 This container also has ansible-lint command<br>
 ```
 docker run --rm satken2/ansible ansible-lint -p <YAML_FILENAME>
-```
+```Tagged
 
 ## Creating aliases
 
@@ -71,3 +71,21 @@ This script creates aliases for following ansible commands.
  - ansible-playbook
  - ansible-galaxy
  - ansible-vaults
+
+## Tags
+
+### Full image
+
+tag: `satken2/ansible:x.x.x`
+This image contains ansible collections listed in [Collection Index](https://docs.ansible.com/ansible/latest/collections/index.html) as of 2021-05-03
+
+### Slim image
+
+tag: `satken2/ansible:x.x.x-slim`
+
+Slim image contains collections below:
+- ansible.netcommon
+- ansible.posix
+- ansible.utils
+- ansible.windows
+
