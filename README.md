@@ -72,6 +72,7 @@ This script creates aliases for following ansible commands.
  - ansible-galaxy
  - ansible-vaults
 
+
 ## Tags
 
 ### Full image
